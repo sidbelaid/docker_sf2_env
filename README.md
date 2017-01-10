@@ -26,4 +26,4 @@ $ git clone https://github.com/sidbelaid/docker_sf2_env.git docker_sf2_env
 $ cd docker_sf2_env
 $ docker-compose up
 ```
-### 4- access to app under http://192.162.99.100:40000/ (use docker-machine ip to get the docker adress ip)
+### 4- access to app under http://192.162.99.100:41000/ (use docker-machine ip to get the docker adress ip)
