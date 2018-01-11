@@ -4,7 +4,7 @@ services:
         build: web
         ports:
             - "80:80"
-            - "41000:41000"
+            - "40000-40100:40000-40100"
         volumes:
             - /developpement/docker/docker_sf2_env/config/php.ini:/usr/local/etc/php/php.ini
             - /developpement/docker/docker_sf2_env/config/vhost/:/etc/apache2/sites-enabled/
