@@ -8,7 +8,8 @@ services:
         volumes:
             - /developpement/docker/docker_sf2_env/config/php.ini:/usr/local/etc/php/php.ini
             - /developpement/docker/docker_sf2_env/config/vhost/:/etc/apache2/sites-enabled/
-            - /developpement/sfProjects/sf2/:/var/www/html/
+            - /developpement/sfProjects/sf2/:/var/www/html/        
+            - /developpement/ged/:/mnt/data/ged
         links:
             - db
         environment:
@@ -20,4 +21,8 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: root
         volumes:
-            - /developpement/docker/mysql:/var/lib/mysql
+#            - /developpement/docker/mysql:/var/lib/mysql
+            - mysql-data:/var/lib/mysql
+            
+volumes:
+    mysql-data:

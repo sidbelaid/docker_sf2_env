@@ -33,6 +33,15 @@ RUN	apt-get install -y nodejs
 RUN	npm install -g grunt-cli
 
 #install Imagemagick & PHP Imagick ext
-RUN apt-get update && apt-get install -y \
+RUN apt-get update -y && apt-get install -y \
         libmagickwand-dev --no-install-recommends
 RUN pecl install imagick && docker-php-ext-enable imagick
+
+# RUN apt-get update -y && apt-get install -y wkhtmltopdf
+# wkhtmltopdf
+RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+RUN tar Jxvf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+RUN cp wkhtmltox/bin/wk* /usr/local/bin/
+RUN chmod +x /usr/local/bin/wk*
+RUN rm -Rf wkhtmltox/
+RUN rm -Rf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
